@@ -63,6 +63,7 @@
 % listings, verbatim, minted, all need the fragile option for frame
 \begin{frame}[fragile]{\insertsection}
 \begin{block}{Where to find the \TeX\ archive for \textsc{beamer}}
+  \small
   The archive \texttt{nwcler} is available under version-control by
   \href{https://git-scm.com/}{\texttt{git}} here:
   \begin{lstlisting}[language=bash]
@@ -77,11 +78,16 @@
 \end{block}
 % \vfil
 \begin{exampleblock}{Compile the example file}
+  \small
   The archive contains an example (\texttt{\examplefile})
   that can be compiled by \TeX\ (\texttt{pdflatex} is recommended).
   \emph{Please, make sure that you have installed all the required
   packages if the first compilation fails.}
 \end{exampleblock}
+\begin{center}
+\alert<2>{You may need to run \texttt{texhash} to update your
+package index.}
+\end{center}
 \end{frame}
 
 \section{Descriptive section}
