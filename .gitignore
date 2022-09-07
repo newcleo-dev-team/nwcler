@@ -11,3 +11,4 @@
 *.pdf
 !images/*.pdf
 images/newcleo-logo
+backup_images
