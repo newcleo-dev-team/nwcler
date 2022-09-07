@@ -7,4 +7,7 @@
 *.synctex.gz
 *.toc
 *.vrb
+*.zip
 *.pdf
+!images/*.pdf
+images/newcleo-logo
