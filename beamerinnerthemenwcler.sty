@@ -1,0 +1,109 @@
+% author: Daniele Tomatis
+% company: newcleo, Turin, Italy
+% date: sept 6th, 2022
+% object: inner nwcler template
+\mode<presentation>
+
+% \setbeamertemplate{background}{
+% not needed for the moment
+% }
+
+% new section page
+\setbeamertemplate{section page}{
+\thispagestyle{navigation@sectionpage}
+\begingroup
+% \usebeamertemplate***{section page footline}
+\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{%
+    images/OrangeBackground.pdf}
+}
+\begin{frame}[noframenumbering]
+\vfill
+\centering
+\begin{beamercolorbox}[sep=8pt,center,ignorebg]{title}
+  \usebeamerfont{title}\underline{
+    % \thesection.\:
+    \insertsectionhead
+  }\par%
+  % \textcolor{white}{\tableofcontents[currentsection]}
+\end{beamercolorbox}
+\vfill
+\end{frame}
+\endgroup
+}
+
+% title page
+\defbeamertemplate*{title page}{nwcler}[1][]
+{
+\begin{tikzpicture}[overlay, remember picture]
+  \node[inner sep=0pt,outer sep=0pt,anchor=north east] at
+    (current page.north east) {
+      \includegraphics[width=\paperwidth,height=\paperheight]{
+        images/MainBackground.pdf
+      }
+    };
+  \node[inner sep=12pt, anchor=north west] (logotp) at (current page.150){
+      \includegraphics[width=3cm]{\thelogo}
+  };
+  \node[inner sep=12pt,outer sep=0pt,anchor=south west] (date) at
+    (current page.210) {
+    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,left,#1]{date}
+      \usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+  };
+  \node[inner sep=0pt,outer sep=-15pt,above=of date] (authors) {
+    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,left,#1]{author}
+      {\usebeamerfont{author}\insertauthor}\\
+      {\usebeamerfont{institute}\insertinstitute}
+    \end{beamercolorbox}
+  };
+  \node[inner sep=0pt,outer sep=-5pt,above=of authors] (ttitles) {
+    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,sep=5pt,left,#1]
+        {title page header}
+      {\usebeamerfont{title page header}\inserttitle}\\[5pt]
+      {\usebeamerfont{subtitle page header}\insertsubtitle}\par%
+    \end{beamercolorbox}
+  };
+\end{tikzpicture}
+}
+
+% end page
+\setbeamertemplate{end page}{
+\setbeamertemplate{footline}{}
+\begin{tikzpicture}[overlay, remember picture]
+  \node[inner sep=0pt,outer sep=0pt,anchor=north east] at
+    (current page.north east) {
+      \includegraphics[width=\paperwidth,height=\paperheight]%
+        {images/MainBackground.pdf}
+  };
+  \node[inner sep=12pt, anchor=north west] at
+    (current page.150) {
+      \includegraphics[width=3cm]{\thelogo}
+  };
+  \node[inner sep=12pt,outer sep=0pt,anchor=west] at
+    (current page.180) {
+    \begin{beamercolorbox}[wd=.9\paperwidth,left]
+        {acknowledgement in endpage}
+      \usebeamerfont{acknowledgement in endpage}\quad\thxmessage\par
+    \end{beamercolorbox}
+  };
+  \node[outer sep=3pt, anchor=south] (disclaimer) at
+    (current page.270) {
+    \begin{beamercolorbox}[wd=.925\paperwidth]
+        {disclaimer in endpage}
+      \noindent\textcolor{white}{\rule{.6\paperwidth}{0.4pt}}\\[0pt]
+      \usebeamerfont{disclaimer in endpage}\disclaimer\par
+    \end{beamercolorbox}
+  };
+\end{tikzpicture}
+}
+
+\AtBeginSection{\usebeamertemplate{section page}}
+\AtEndDocument{\usebeamertemplate{end page}}
+
+% Items
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{itemize subitem}{$\rightarrow$}
+
+\mode<all>

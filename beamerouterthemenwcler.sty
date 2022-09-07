@@ -1,0 +1,89 @@
+% author: Daniele Tomatis
+% company: newcleo, Turin, Italy
+% date: sept 6th, 2022
+% object: outer nwcler template
+
+\mode<presentation>
+
+% frame title
+\defbeamertemplate*{frametitle}{nwcler}[1][]{
+  \vskip.03\paperheight
+  \begin{beamercolorbox}[wd=\paperwidth]{frametitle} 
+  \begin{tikzpicture}
+  \hspace*{2em}
+  \ifx\insertframesubtitle\@empty%
+     {\node[anchor=west] at (3.2,0.61){
+        \usebeamerfont{frametitle}\insertframetitle
+      };}
+  \else%
+     {\node[anchor= west] at (3.2,0.81){
+        \usebeamerfont{frametitle}\insertframetitle
+      };
+      \node[anchor= west] at (3.2,0.41){
+        \usebeamerfont{framesubtitle}\insertframesubtitle
+      };}
+  \fi
+  \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+% footer / footline
+\setbeamertemplate{footline}{
+% in case you do not want to consider some starting slide or frame
+% \ifnum \theframenumber=1
+  % % This is the ToC, do nothing
+% \else
+  \begin{minipage}{\paperwidth}
+    \hfil
+    \includegraphics[width=.95\paperwidth,height=2pt]{
+      images/footrule_gray.pdf}
+    \hfil
+  \end{minipage}
+  \leavevmode\hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3ex,dp=1.5ex,left]]{
+      %title in head/foot}{
+    \hspace*{1em}
+    \raisebox{-.25\height}{\includegraphics[width=\logowd]{\bkglogo}}
+    \hspace*{1em}
+    }
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3ex,dp=1.5ex,center]
+      {author in head/foot}%
+    \usebeamerfont{author in head/foot}
+      \insertshortauthor{} -- \insertshortdate{}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3ex,dp=1.5ex,right]
+      {date in head/foot}%
+    \usebeamerfont{date in head/foot}\hspace*{2em}
+    \insertframenumber{} / \insertmainframenumber\hspace*{2ex}
+    % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}
+% \fi
+}
+
+\defbeamertemplate{footline}{section page footline}{%
+\begin{minipage}{\paperwidth}
+  \hfil
+  \includegraphics[width=.95\paperwidth,height=2pt]{
+    images/footrule_white.pdf}
+  \hfil  % \newline 
+\end{minipage}
+\mbox{
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=3ex,dp=1.5ex,left]]{}
+    {\hspace*{1em}
+     \raisebox{-.25\height}{\includegraphics[width=\logowd]{\thelogo}}
+     \hspace*{1em}}
+  \end{beamercolorbox}
+}
+}
+
+\def\ps@navigation@sectionpage{%
+  \setbeamertemplate{footline}[section page footline]
+  \@nameuse{ps@navigation}
+}
+% the following is commented because the 'add' is performed only once
+% \addtobeamertemplate{section page}{\thispagestyle{navigation@sectionpage}}{}
+
+% \pretocmd{\tableofcontents}{\thispagestyle{navigation@titlepage}}{}{}
+
+\mode<all>

@@ -1,0 +1,185 @@
+% author: Daniele Tomatis
+% company: newcleo, Turin, Italy
+% date: sept 6th, 2022
+% object: example slides for the nwcler template
+% memo: compile twice by pdflatex to get the correct number of slides in the
+%       footline
+% info: the command \newcleo is defined in the main beamer theme file
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{listings}
+\usepackage{lipsum}
+% \usepackage{amssymb}  % enables \checkmark
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\pro}[1]{\item[{\color{nwclgreen}\cmark}] #1}
+\newcommand{\con}[1]{\item[{\color{darkred}\xmark}] #1}
+
+\title{Sample Title Here}
+\subtitle{Sample Subtitle Here}
+\date[Event-short-name]{Event (long description), \today}
+% Event-short-name or event acronym is shown at the bottom of the title page
+\author[authors-in-short]{
+  FirstName~LastName\inst{1} \texttt{first@addrs.one}
+%  \and
+%  FirstName~LastName\inst{2} \texttt{second@addrs.two}
+%  \and
+%  FirstName~LastName\inst{3} \texttt{third@addrs.three}
+}
+% NWCL as acronym of the institute or company for the affiliation used
+\institute[NWCL]{
+  \inst{1} \newcleo\ SrL, Via Giuseppe Galliano 27, 10129 Torino, Italy
+%  \inst{2} \newcleo\ Ltd, 2 Portman Street, London, England, W1H 6DU
+%  \inst{3} \newcleo\ SA, Tour Silex$^2$, 9 rue des Cuirassiers, 69003 Lyon, France
+}
+
+\newcommand{\examplefile}{\jobname.tex}
+
+\usetheme{nwcler}
+
+% redefine thanks message at the end page
+% \renewcommand{\thxmessage}{Thank you}
+% uncomment the following line to get rid of the end page
+% \AtEndDocument{}
+% uncomment the following line to get rid of new section page(s)
+% \AtBeginSection{}
+
+% -------------------------
+\begin{document}
+
+\begin{frame}[noframenumbering,plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[noframenumbering,plain]{Outline of talk}
+  \tableofcontents
+\end{frame}
+
+\section{How to install \texttt{nwcler}}
+
+% listings, verbatim, minted, all need the fragile option for frame
+\begin{frame}[fragile]{\insertsection}
+\begin{block}{Where to find the \TeX\ archive for \textsc{beamer}}
+  The archive \texttt{nwcler} is available under version-control by
+  \href{https://git-scm.com/}{\texttt{git}} here:
+  \begin{lstlisting}[language=bash]
+    git clone XXX
+  \end{lstlisting}
+  Please install the package as in the following,
+  \begin{lstlisting}[language=bash]
+  $TEXDIR/texmf-dist/tex/latex/beamer/nwcler/.
+  \end{lstlisting}
+  where \lstinline|$TEXDIR| contains the local installation of your
+  \TeX\ distribution.
+\end{block}
+% \vfil
+\begin{exampleblock}{Compile the example file}
+  The archive contains an example (\texttt{\examplefile})
+  that can be compiled by \TeX\ (\texttt{pdflatex} is recommended).
+  \emph{Please, make sure that you have installed all the required
+  packages if the first compilation fails.}
+\end{exampleblock}
+\end{frame}
+
+\section{Descriptive section}
+
+\begin{frame}{Text \& side figure}
+
+\begin{columns}
+\begin{column}{0.58\textwidth}
+  \scriptsize
+  \lipsum[1]
+\end{column}
+\hfill
+\begin{column}{0.4\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/artistic\_pond.pdf}
+    \caption{Waves in pond.}
+    \label{fig:artpond}
+  \end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Item list}
+\begin{columns}
+\begin{column}{0.35\textwidth}
+\begin{itemize}
+  \pro one
+  \con two
+  \begin{itemize}[<alert@+>]
+    \item two.null
+    \item two.eins
+    \item two.zwei
+  \end{itemize}
+  \item three
+\end{itemize}
+\end{column}
+% \hfill
+\begin{column}{0.64\textwidth}
+\begin{alertblock}{This is an alert block}
+Use alert blocks in case of warning message.
+\end{alertblock}
+\end{column}
+\end{columns}
+%
+\begin{exampleblock}{This is an example of code block}\scriptsize
+\lstset{
+  commentstyle=\color{nwclgreen},    % comment style
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=[95]Fortran,                 % the language of the code
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+}
+\begin{lstlisting}
+program hello
+  ! This is a comment line; it is ignored by the compiler
+  print *, 'Hello, World!'
+end program hello
+\end{lstlisting}
+that can be compiled by: \lstinline|$> gfortran hello.f90 -o hello|.
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Picture with text overlay}
+\begin{tikzpicture}
+  % load the first image as a node called img1
+  \node (img1) {
+    % \begin{figure}
+      % \centering
+      \includegraphics[height=0.7\textheight]{images/artistic\_mood.pdf}
+      % \caption{Menschliche K{\"u}nste im Weltraum.}
+      % \label{fig:artmood}
+    % \end{figure}
+  };
+  % \pause
+  \node<2> (img2) at (img1.center) {
+    \colorbox{lightyellow}{
+      \textcolor{darkred}{\emph{Et maintenant attrape les étoiles !}}
+    }
+  };
+\end{tikzpicture}
+\end{frame}
+
+\section{Math-like section}
+\begin{frame} 
+\frametitle{There Is No Largest Prime Number} 
+\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+\begin{theorem}
+  There is no largest prime number.
+\end{theorem} 
+\begin{enumerate} 
+  \item<1-| alert@1> Suppose $p$ were the largest prime number. 
+  \item<2-> Let $q$ be the product of the first $p$ numbers. 
+  \item<3-> Then $q+1$ is not divisible by any of them. 
+  \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime number not in the first $p$ numbers.
+\end{enumerate}
+\end{frame}
+
+\end{document}

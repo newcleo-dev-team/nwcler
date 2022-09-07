@@ -1,0 +1,41 @@
+% author: Daniele Tomatis
+% company: newcleo, Turin, Italy
+% date: sept 6th, 2022
+% object: company's beamer template for general slides and talks
+%         newcleo + beamer -> nwcler template
+
+\mode<presentation>
+
+% Requirement
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\RequirePackage{helvet}  % use Arial-like fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\thelogo}{images/logo/newcleo\_logo\_white.pdf}
+\newcommand{\bkglogo}{images/logo/newcleo\_logo.pdf}
+\newcommand{\logowd}{.1\paperwidth}
+\newcommand{\newcleo}{\emph{new}cleo}
+\newcommand{\thxmessage}{Thank you for your attention}
+\newcommand{\disclaimer}{%
+% alternative form
+% Any reproduction, alteration, transmission to any third party or publication in whole or in part of this document and/or its content is prohibited unless \newcleo\ has provided its prior and written consent. This document and any information therein contained shall not be used for any other purpose than that for which there were produced. Legal and disciplinary actions may be undertaken against any infringer and/or person breaching the aforementioned obligations.
+Any reproduction, distribution, publication, modification, provision to third parties or adaptation of any contents and structural elements, including, but not limited to texts, text components, images and graphical materials, programs and design elements shall require the prior written express consent of {\upshape\newcleo}.
+}
+% \logo{\thelogo}
+
+% Settings
+\useinnertheme{nwcler}
+\useoutertheme{nwcler}
+\usecolortheme{nwcler}
+% \useoutertheme{miniframes}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{caption}[numbered]
+
+\mode<all>
