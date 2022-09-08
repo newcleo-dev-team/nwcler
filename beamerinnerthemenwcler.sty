@@ -47,18 +47,18 @@
   };
   \node[inner sep=12pt,outer sep=0pt,anchor=south west] (date) at
     (current page.210) {
-    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,left,#1]{date}
+    \begin{beamercolorbox}[wd=.9\paperwidth,leftskip=.5cm,left,#1]{date}
       \usebeamerfont{date}\insertdate%
     \end{beamercolorbox}
   };
   \node[inner sep=0pt,outer sep=-15pt,above=of date] (authors) {
-    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,left,#1]{author}
+    \begin{beamercolorbox}[wd=.9\paperwidth,leftskip=.5cm,left,#1]{author}
       {\usebeamerfont{author}\insertauthor}\\
       {\usebeamerfont{institute}\insertinstitute}
     \end{beamercolorbox}
   };
   \node[inner sep=0pt,outer sep=-5pt,above=of authors] (ttitles) {
-    \begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.5cm,sep=5pt,left,#1]
+    \begin{beamercolorbox}[wd=.9\paperwidth,leftskip=.5cm,sep=5pt,left,#1]
         {title page header}
       {\usebeamerfont{title page header}\inserttitle}\\[5pt]
       {\usebeamerfont{subtitle page header}\insertsubtitle}\par%
@@ -102,8 +102,10 @@
 \AtEndDocument{\usebeamertemplate{end page}}
 
 % Items
-\setbeamertemplate{items}[circle]
 \setbeamertemplate{sections/subsections in toc}[circle]
-\setbeamertemplate{itemize subitem}{$\rightarrow$}
+\setbeamertemplate{items}[circle]
+% \setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[square]
 
 \mode<all>

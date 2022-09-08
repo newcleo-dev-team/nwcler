@@ -15,8 +15,8 @@
 \RequirePackage{helvet}  % use Arial-like fonts
 \renewcommand{\familydefault}{\sfdefault}
 
-\newcommand{\thelogo}{images/logo/newcleo\_logo\_white.pdf}
-\newcommand{\bkglogo}{images/logo/newcleo\_logo.pdf}
+\newcommand{\thelogo}{images/logo/newcleo\_logo\_white\_payoff.pdf}
+\newcommand{\bkglogo}{images/logo/newcleo\_logo\_payoff.pdf}
 \newcommand{\logowd}{.1\paperwidth}
 \newcommand{\newcleo}{\emph{new}cleo}
 \newcommand{\thxmessage}{Thank you for your attention}
@@ -37,5 +37,10 @@ Any reproduction, distribution, publication, modification, provision to third pa
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
 \setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{subsection in toc}
+  {\leavevmode\leftskip=2em%
+  \textcolor{purple}{$\bullet$\hskip1em\inserttocsubsection}%
+  \par}
 
 \mode<all>
