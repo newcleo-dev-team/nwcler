@@ -39,8 +39,12 @@ Any reproduction, distribution, publication, modification, provision to third pa
 \setbeamertemplate{caption}[numbered]
 
 \setbeamertemplate{subsection in toc}
-  {\leavevmode\leftskip=2em%
+  {\vskip0.5em\leavevmode\leftskip=2em%
   \textcolor{purple}{$\bullet$\hskip1em\inserttocsubsection}%
+  % \vskip0.5em
   \par}
+
+% \patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+% \patchcmd{\beamer@subsectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
 
 \mode<all>
