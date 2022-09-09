@@ -13,7 +13,13 @@
   \hspace*{2em}
   \ifx\insertframesubtitle\@empty%
      {\node[anchor=west] at (3.2,0.61){
-        \usebeamerfont{frametitle}\insertframetitle
+        \usebeamerfont{frametitle}%
+        % \ifx\insertsubsectionnumber\@empty%
+          % \insertsectionnumber.
+        % \else%
+          % \insertsectionnumber{.}\insertsubsectionnumber
+        % \fi
+        \insertframetitle
       };}
   \else%
      {\node[anchor= west] at (3.2,0.81){
