@@ -45,6 +45,10 @@
   \node[inner sep=12pt, anchor=north west] (logotp) at (current page.150){
       \includegraphics[width=3cm]{\thelogo}
   };
+   \IfFileExists{\pathlogo}{
+    \node[inner sep=12pt, anchor=north west] (logo2) at (current page.130){
+      \includegraphics[width=10ex]{\pathlogo}
+  };};     
   \node[inner sep=12pt,outer sep=0pt,anchor=south west] (date) at
     (current page.210) {
     \begin{beamercolorbox}[wd=.9\paperwidth,leftskip=.5cm,left,#1]{date}

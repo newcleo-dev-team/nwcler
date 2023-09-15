@@ -36,7 +36,25 @@
 %  \inst{3} \newcleo\ SA, Tour Silex$^2$, 9 rue des Cuirassiers, 69003 Lyon, France
 }
 
+
+
+\newcommand{\secondLogoTitlePage}[3]{\IfFileExists{#1}{\begin{tikzpicture}[#3]
+  \node[inner sep=12pt, anchor= north west] at (3,#2){
+      \includegraphics[width=2cm]{#1}
+  };
+  \end{tikzpicture}
+  }}
+  
+% if you want add a second logo in the title page and as logo at the footpage of each slide put the path and the name file in the following comand
+\newcommand{\pathlogo}{"C:/Users/elena.travaglia/OneDrive - Newcleo/Documenti/github_repository/nwcler/images/polito.pdf"}
+\IfFileExists{\pathlogo}{ \newcommand{\widthLogo}{0.5cm}}
+ 
+  
 \newcommand{\examplefile}{\jobname.tex}
+
+\titlegraphic{
+includegraphics[width=\textwidth]{Sample Image}
+}
 
 \usetheme{nwcler}
 
@@ -52,6 +70,9 @@
 
 \begin{frame}[noframenumbering,plain]
   \titlepage
+ 
+%\secondLogoTitlePage{images/polito.pdf}{3.85}{overlay, remember picture}
+ 
 \end{frame}
 
 \begin{frame}[noframenumbering,plain]{Outline of talk}
