@@ -26,6 +26,20 @@
 Any reproduction, distribution, publication, modification, provision to third parties or adaptation of any contents and structural elements, including, but not limited to texts, text components, images and graphical materials, programs and design elements shall require the prior written express consent of {\upshape\newcleo}.
 }
 % \logo{\thelogo}
+\makeatletter
+
+\def\@secondlogo{''}
+\newcommand{\secondlogo}[1]{\gdef\@secondlogo{#1}}
+%\ifdefined\secondlogo
+	\newcommand{\pathlogo}{\@secondlogo}
+%\else
+%	\secondlogo{pippo.pdf}
+%	\newcommand{\pathlogo}{\@secondlogo}
+%\fi
+\newcommand{\widthLogo}{0.5cm}
+%\@latex@warning{This will be written in the log file}
+%\newcommand{\secondlogo}[1]{\gdef\@secondlogo{#1}}
+\makeatother 
 
 % Settings
 \useinnertheme{nwcler}
