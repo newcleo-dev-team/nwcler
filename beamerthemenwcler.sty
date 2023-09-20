@@ -22,26 +22,13 @@
 \newcommand{\newcleo}{\emph{new}cleo}
 \newcommand{\thxmessage}{Thank you for your attention}
 \newcommand{\secondlogo}{None}
+\newcommand{\secondlogowd}{.1\paperwidth}
 \newcommand{\disclaimer}{%
 % alternative form
 % Any reproduction, alteration, transmission to any third party or publication in whole or in part of this document and/or its content is prohibited unless \newcleo\ has provided its prior and written consent. This document and any information therein contained shall not be used for any other purpose than that for which there were produced. Legal and disciplinary actions may be undertaken against any infringer and/or person breaching the aforementioned obligations.
 Any reproduction, distribution, publication, modification, provision to third parties or adaptation of any contents and structural elements, including, but not limited to texts, text components, images and graphical materials, programs and design elements shall require the prior written express consent of {\upshape\newcleo}.
 }
 % \logo{\thelogo}
-\makeatletter
-
-\def\@secondlogo{''}
-\newcommand{\secondlogo}[1]{\gdef\@secondlogo{#1}}
-%\ifdefined\secondlogo
-	\newcommand{\pathlogo}{\@secondlogo}
-%\else
-%	\secondlogo{pippo.pdf}
-%	\newcommand{\pathlogo}{\@secondlogo}
-%\fi
-\newcommand{\widthLogo}{0.5cm}
-%\@latex@warning{This will be written in the log file}
-%\newcommand{\secondlogo}[1]{\gdef\@secondlogo{#1}}
-\makeatother 
 
 % Settings
 \useinnertheme{nwcler}
