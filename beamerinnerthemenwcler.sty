@@ -45,10 +45,12 @@
   \node[inner sep=12pt, anchor=north west] (logotp) at (current page.150){
       \includegraphics[width=3cm]{\thelogo}
   };
-   \IfFileExists{\pathlogo}{
-    \node[inner sep=12pt, anchor=north west] (logo2) at (current page.130){
-      \includegraphics[width=10ex]{\pathlogo}
-  };}{  \@latex@warning{The path of the second logo doesn't exist}};     
+  \ifthenelse{\equal{\secondlogo}{None}}{}{%
+  \IfFileExists{\secondlogo}{
+    \node[inner sep=12pt, anchor=north east] (logo2) at (current page.north east){
+      \includegraphics[width=3cm]{\secondlogo}
+  };}{ \@latex@warning{Missing second logo or wrong path} };
+  }  
   \node[inner sep=12pt,outer sep=0pt,anchor=south west] (date) at
     (current page.210) {
     \begin{beamercolorbox}[wd=.9\paperwidth,leftskip=.5cm,left,#1]{date}

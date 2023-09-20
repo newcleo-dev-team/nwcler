@@ -46,34 +46,24 @@
     \hfil
   \end{minipage}
   \leavevmode\hbox{%
- %
-  
-  \IfFileExists{\pathlogo}{
-  \begin{beamercolorbox}[wd=.15\paperwidth,ht=3ex,dp=1.5ex,left]]{
+  \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,left]]{
+      %title in head/foot}{
     \hspace*{1em}
-    \raisebox{-.1\height}{\includegraphics[width=\logowd]{\bkglogo}}				  
-    }
-  \end{beamercolorbox}
-  
-	   \begin{beamercolorbox}[wd=.15\paperwidth,ht=3ex,dp=1.ex,left]]{
-    \raisebox{-.1\height}{\includegraphics[width=\widthLogo]{\pathlogo}}			  
+    \raisebox{-.25\height}{\includegraphics[width=\logowd]{\bkglogo}}
+    \IfFileExists{\secondlogo}{
+      \raisebox{-.25\height}{\includegraphics[width=\logowd]{\secondlogo}}
+    }{ \@latex@warning{Missing second logo or wrong path} }
+    \hspace*{1em}
     }
   \end{beamercolorbox}%
-	     }{
-	      \begin{beamercolorbox}[wd=.3\paperwidth,ht=3ex,dp=1.5ex,left]]{
-    \hspace*{1em}
-    \raisebox{-.1\height}{\includegraphics[width=\logowd]{\bkglogo}}				  
-    }
-  \end{beamercolorbox}}
-
   \begin{beamercolorbox}[wd=.45\paperwidth,ht=3ex,dp=1.5ex,center]
       {author in head/foot}%
     \usebeamerfont{author in head/foot}
       \insertshortauthor{} -- \insertshortdate{}
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.25\paperwidth,ht=3ex,dp=1.5ex,right]
+  \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,right]
       {date in head/foot}%
-    \usebeamerfont{date in head/foot}\hspace*{1em}
+    \usebeamerfont{date in head/foot}\hspace*{2em}
     \insertframenumber{} / \insertmainframenumber\hspace*{2ex}
     % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
   \end{beamercolorbox}}
@@ -81,32 +71,23 @@
 }
 
 \defbeamertemplate{footline}{section page footline}{%
-  \begin{minipage}{\paperwidth}
-    \hfil
-    \includegraphics[width=.95\paperwidth,height=2pt]{
-      images/footrule_white.pdf}
-    \hfil
-  \end{minipage}
-  \leavevmode\hbox{%  
-  \IfFileExists{\pathlogo}{
-  	 \begin{beamercolorbox}[wd=.15\paperwidth,ht=3ex,dp=1.5ex,left]]{
-    \hspace*{1em}
-    \raisebox{-.1\height}{\includegraphics[width=\logowd]{\thelogo}}				  
+\begin{minipage}{\paperwidth}
+  \hfil
+  \includegraphics[width=.95\paperwidth,height=2pt]{
+    images/footrule_white.pdf}
+  \hfil  % \newline 
+\end{minipage}
+\mbox{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]]{}
+    {\hspace*{1em}
+     \raisebox{-.25\height}{\includegraphics[width=\logowd]{\thelogo}}
+     \IfFileExists{\secondlogo}{
+       \hfill
+       \raisebox{-.25\height}{\includegraphics[width=\logowd]{\secondlogo}}
+     }{ \@latex@warning{Missing second logo or wrong path} }
+     \hspace*{1em}
     }
   \end{beamercolorbox}
-  
-	   \begin{beamercolorbox}[wd=.15\paperwidth,ht=3ex,dp=1.ex,left]]{
-    \raisebox{-.1\height}{\includegraphics[width=\widthLogo]{\pathlogo}}			  
-    }
-  \end{beamercolorbox}%
-	     }{
-	      \begin{beamercolorbox}[wd=.333\paperwidth,ht=3ex,dp=1.5ex,left]]{
-    \hspace*{1em}
-    \raisebox{-.1\height}{\includegraphics[width=\logowd]{\thelogo}}				  
-    }
-  \end{beamercolorbox}%
-}
-
 }
 }
 
