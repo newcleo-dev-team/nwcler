@@ -86,6 +86,12 @@
     (current page.150) {
       \includegraphics[width=3cm]{\thelogo}
   };
+  \ifthenelse{\equal{\secondlogo}{None}}{}{%
+  \IfFileExists{\secondlogo}{
+    \node[inner sep=12pt, anchor=north east] (logo2) at (current page.north east){
+      \includegraphics[width=3cm]{\secondlogo}
+    };}{ \@latex@warning{Missing second logo or wrong path} };
+  } 
   \node[inner sep=12pt,outer sep=0pt,anchor=west] at
     (current page.180) {
     \begin{beamercolorbox}[wd=.9\paperwidth,left]
