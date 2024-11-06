@@ -15,18 +15,21 @@
 % \usebeamertemplate***{section page footline}
 \usebackgroundtemplate{%
   \includegraphics[width=\paperwidth,height=\paperheight]{%
-    images/OrangeBackground.pdf}
+    images/BlackWhiteBackground.pdf
+%    images/OrangeBackground.pdf
+  }
 }
 \begin{frame}[noframenumbering]
 \vfill
 \centering
 \begin{beamercolorbox}[sep=8pt,center,ignorebg]{title}
-  \usebeamerfont{title}\underline{
+  \usebeamerfont{title}
+  {\color{darkgreen}\underline{
     \begin{minipage}{\textwidth}
     % \thesection.\:
-      \insertsectionhead
+      {\color{orange}\insertsectionhead}
     \end{minipage}
-  }\par%
+  }}\par%
   % \textcolor{white}{\tableofcontents[currentsection]}
 \end{beamercolorbox}
 \vfill

@@ -74,13 +74,18 @@
 \begin{minipage}{\paperwidth}
   \hfil
   \includegraphics[width=.95\paperwidth,height=2pt]{
-    images/footrule_white.pdf}
+%    images/footrule_white.pdf
+    images/footrule_gray.pdf
+  }
   \hfil  % \newline 
 \end{minipage}
 \mbox{
   \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]]{}
     {\hspace*{1em}
-     \raisebox{-.25\height}{\includegraphics[width=\logowd]{\thelogo}}
+     \raisebox{-.25\height}{\includegraphics[width=\logowd]{
+       % \thelogo
+       \bkglogo
+     }}
      \IfFileExists{\secondlogo}{
        \hfill
        \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
