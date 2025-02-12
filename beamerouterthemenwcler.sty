@@ -35,65 +35,60 @@
 
 % footer / footline
 \setbeamertemplate{footline}{
-% in case you do not want to consider some starting slide or frame
-% \ifnum \theframenumber=1
+  % in case you do not want to consider some starting slide or frame
+  % \ifnum \theframenumber=1
   % % This is the ToC, do nothing
-% \else
+  % \else
   \begin{minipage}{\paperwidth}
     \hfil
-    \includegraphics[width=.95\paperwidth,height=2pt]{
+    \includegraphics[width=0.95\paperwidth,height=2.25pt]{
       images/footrule_gray.pdf}
     \hfil
   \end{minipage}
   \leavevmode\hbox{%
-  \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,left]]{
+    \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,left]]{
       %title in head/foot}{
-    \hspace*{1em}
-    \raisebox{-.25\height}{\includegraphics[width=\logowd]{\bkglogo}}
-    \IfFileExists{\secondlogo}{
-      \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
-    }{ \@latex@warning{Missing second logo or wrong path} }
-    \hspace*{1em}
-    }
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.45\paperwidth,ht=3ex,dp=1.5ex,center]
+      \hspace*{0.25em}
+      \raisebox{-.25\height}{\includegraphics[width=\logowd]{\bkglogo}}
+      \IfFileExists{\secondlogo}{
+        \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
+      }{ \@latex@warning{Missing second logo or wrong path} }
+      \hspace*{0.25em}
+      }
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.45\paperwidth,ht=3ex,dp=1.5ex,center]
       {author in head/foot}%
-    \usebeamerfont{author in head/foot}
+      \usebeamerfont{author in head/foot}
       \insertshortauthor{} -- \insertshortdate{}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,right]
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.275\paperwidth,ht=3ex,dp=1.5ex,right]
       {date in head/foot}%
-    \usebeamerfont{date in head/foot}\hspace*{2em}
-    \insertframenumber{} / \insertmainframenumber\hspace*{2ex}
-    % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
-  \end{beamercolorbox}}
-% \fi
+      \usebeamerfont{author in head/foot}\hspace*{2em}
+      \insertframenumber{} / \insertmainframenumber\hspace*{2ex}
+    \end{beamercolorbox}}
+  % \fi
 }
 
 \defbeamertemplate{footline}{section page footline}{%
-\begin{minipage}{\paperwidth}
-  \hfil
-  \includegraphics[width=.95\paperwidth,height=2pt]{
-%    images/footrule_white.pdf
-    images/footrule_gray.pdf
+  \begin{minipage}{\paperwidth}
+    \hfil
+    \textcolor{white}{\rule{0.94\textwidth}{2pt}}
+    \hfil  % \newline 
+  \end{minipage}
+  \mbox{
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.5ex]{}
+      {\hspace*{0.25em}
+        \raisebox{-.25\height}{\includegraphics[width=\logowd]{
+            \thelogo
+          }}
+        \IfFileExists{\secondlogo}{
+          \hfill
+          \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
+        }{ \@latex@warning{Missing second logo or wrong path} }
+        \hspace*{0.25em}
+      }
+    \end{beamercolorbox}
   }
-  \hfil  % \newline 
-\end{minipage}
-\mbox{
-  \begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex]{}
-    {\hspace*{1em}
-     \raisebox{-.25\height}{\includegraphics[width=\logowd]{
-       % \thelogo
-       \bkglogo
-     }}
-     \IfFileExists{\secondlogo}{
-       \hfill
-       \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
-     }{ \@latex@warning{Missing second logo or wrong path} }
-     \hspace*{1em}
-    }
-  \end{beamercolorbox}
-}
 }
 
 \def\ps@navigation@sectionpage{%

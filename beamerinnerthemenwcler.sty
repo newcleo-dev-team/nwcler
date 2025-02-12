@@ -10,31 +10,29 @@
 
 % new section page
 \setbeamertemplate{section page}{
-\thispagestyle{navigation@sectionpage}
-\begingroup
-% \usebeamertemplate***{section page footline}
-\usebackgroundtemplate{%
-  \includegraphics[width=\paperwidth,height=\paperheight]{%
-    images/BlackWhiteBackground.pdf
-%    images/OrangeBackground.pdf
+  \thispagestyle{navigation@sectionpage}
+  \begingroup
+  \usebackgroundtemplate{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{%
+      images/SectionBackground.pdf
+    }
   }
-}
-\begin{frame}[noframenumbering]
-\vfill
-\centering
-\begin{beamercolorbox}[sep=8pt,center,ignorebg]{title}
-  \usebeamerfont{title}
-  {\color{darkgreen}\underline{
-    \begin{minipage}{\textwidth}
-    % \thesection.\:
-      {\color{energy_orange}\insertsectionhead}
-    \end{minipage}
-  }}\par%
-  % \textcolor{white}{\tableofcontents[currentsection]}
-\end{beamercolorbox}
-\vfill
-\end{frame}
-\endgroup
+  \begin{frame}[noframenumbering]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,ignorebg]{title}
+      \usebeamerfont{title}
+
+      \begin{minipage}{\textwidth}
+        \begin{center}
+          \color{white}\insertsectionhead
+        \end{center}
+      \end{minipage}
+      \textcolor{white}{\rule{\textwidth}{3pt}}
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+  \endgroup
 }
 
 % title page
@@ -80,39 +78,39 @@
 
 % end page
 \setbeamertemplate{end page}{
-\setbeamertemplate{footline}{}
-\begin{tikzpicture}[overlay, remember picture]
-  \node[inner sep=0pt,outer sep=0pt,anchor=north east] at
+  \setbeamertemplate{footline}{}
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[inner sep=0pt,outer sep=0pt,anchor=north east] at
     (current page.north east) {
       \includegraphics[width=\paperwidth,height=\paperheight]%
-        {images/MainBackground.pdf}
-  };
-  \node[inner sep=12pt, anchor=north west] at
+      {images/MainBackground.pdf}
+    };
+    \node[inner sep=12pt, anchor=north west] at
     (current page.150) {
       \includegraphics[width=3cm]{\thelogo}
-  };
-  \ifthenelse{\equal{\secondlogo}{None}}{}{%
-  \IfFileExists{\secondlogo}{
-    \node[inner sep=12pt, anchor=north east] (logo2) at (current page.north east){
-      \includegraphics[width=3cm]{\secondlogo}
-    };}{ \@latex@warning{Missing second logo or wrong path} };
-  } 
-  \node[inner sep=12pt,outer sep=0pt,anchor=west] at
+    };
+    \ifthenelse{\equal{\secondlogo}{None}}{}{%
+      \IfFileExists{\secondlogo}{
+        \node[inner sep=12pt, anchor=north east] (logo2) at (current page.north east){
+          \includegraphics[width=3cm]{\secondlogo}
+        };}{ \@latex@warning{Missing second logo or wrong path} };
+    }
+    \node[inner sep=12pt,outer sep=0pt,anchor=west] at
     (current page.180) {
-    \begin{beamercolorbox}[wd=.9\paperwidth,left]
+      \begin{beamercolorbox}[wd=.9\paperwidth,left]
         {acknowledgement in endpage}
-      \usebeamerfont{acknowledgement in endpage}\quad\thxmessage\par
-    \end{beamercolorbox}
-  };
-  \node[outer sep=3pt, anchor=south] (disclaimer) at
+        \usebeamerfont{acknowledgement in endpage}\quad\thxmessage\par
+      \end{beamercolorbox}
+    };
+    \node[outer sep=3pt, anchor=south] (disclaimer) at
     (current page.270) {
-    \begin{beamercolorbox}[wd=.925\paperwidth]
+      \begin{beamercolorbox}[wd=.925\paperwidth]
         {disclaimer in endpage}
-      \noindent\textcolor{white}{\rule{.6\paperwidth}{0.4pt}}\\[0pt]
-      \usebeamerfont{disclaimer in endpage}\disclaimer\par
-    \end{beamercolorbox}
-  };
-\end{tikzpicture}
+        \noindent\textcolor{white}{\rule{.6\paperwidth}{0.4pt}}\\[0pt]
+        \usebeamerfont{disclaimer in endpage}\disclaimer\par
+      \end{beamercolorbox}
+    };
+  \end{tikzpicture}
 }
 
 \AtBeginSection{\usebeamertemplate{section page}}
