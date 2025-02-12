@@ -9,6 +9,8 @@
 *.vrb
 *.zip
 *.pdf
+*.fdb_latexmk
+*.fls
 !images/*.pdf
 images/newcleo-logo
 images/*.png
