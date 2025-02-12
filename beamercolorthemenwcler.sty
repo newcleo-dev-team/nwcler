@@ -4,11 +4,15 @@
 % object: nwcler template (colors)
 \mode<presentation>
 
-\definecolor{orange}{RGB}{235,108,33}
-\definecolor{darkgray}{RGB}{59,60,59}
-\definecolor{turquoise}{RGB}{0,162,232}
+% Official colors
+\definecolor{clean_teal}{RGB}{0,158,161}
+\definecolor{energy_orange}{RGB}{237,108,34}
+\definecolor{pearl_grey}{RGB}{59,60,59}
+
+% Additional colors (unofficial)
+\definecolor{turquoise}{RGB}{8,158,160}
+\definecolor{light_pear_grey}{RGB}{118,135,146}
 \definecolor{lightgreen}{RGB}{195,195,195}
-\definecolor{nwclgreen}{RGB}{12,162,162}
 \definecolor{darkgreen}{RGB}{24,128,55}
 \definecolor{darkred}{RGB}{136,0,21}
 \definecolor{lightyellow}{RGB}{239,228,176}
@@ -19,21 +23,24 @@
 \definecolor{lime}{RGB}{181,230,29}
 
 % font colors
+\setbeamercolor*{normal text}{fg=pearl_grey}
+\setbeamercolor*{section in toc}{fg=pearl_grey}
+\setbeamercolor*{subsection in toc}{fg=pearl_grey}
 \setbeamercolor*{title page header}{fg=white}
 \setbeamercolor*{subtitle page header}{fg=white}
 \setbeamercolor*{title}{fg=white}
 \setbeamercolor*{author}{fg=white}
 \setbeamercolor*{date}{fg=white}
-\setbeamercolor*{author in head/foot}{fg=gray}
-\setbeamercolor*{date in head/foot}{fg=gray}
-\setbeamercolor*{title in head/foot}{fg=gray}
-\setbeamercolor*{item}{fg=orange}
-\setbeamercolor*{frametitle}{fg=nwclgreen}
-\setbeamercolor*{framesubtitle}{fg=nwclgreen}
+\setbeamercolor*{author in head/foot}{fg=pearl_grey}
+\setbeamercolor*{date in head/foot}{fg=pearl_grey}
+\setbeamercolor*{title in head/foot}{fg=pearl_grey}
+\setbeamercolor*{item}{fg=energy_orange}
+\setbeamercolor*{frametitle}{fg=clean_teal}
+\setbeamercolor*{framesubtitle}{fg=clean_teal}
 \setbeamercolor*{acknowledgement in endpage}{fg=white}
 \setbeamercolor*{disclaimer in endpage}{fg=white}
 \setbeamercolor*{caption}{fg=black}
-\setbeamercolor*{caption name}{fg=darkgray}
+\setbeamercolor*{caption name}{fg=pearl_grey}
 
 % font styles
 \setbeamerfont*{title page header}{size=\huge,series=\bfseries}
@@ -54,13 +61,12 @@
 
 % customize blocks
 \setbeamercolor{block title}{fg=white, bg=turquoise}
-% \setbeamercolor{block body}{bg=turquoise!25}
 
-\setbeamercolor{block title alerted}{fg=white, bg=orange}
-\setbeamercolor{block body alerted}{bg=orange!25}
+\setbeamercolor{block title alerted}{fg=white, bg=energy_orange}
+\setbeamercolor{block body alerted}{bg=energy_orange!25}
 
-\setbeamercolor{block title example}{fg=white, bg=nwclgreen}
-\setbeamercolor{block body example}{bg=nwclgreen!25}
+\setbeamercolor{block title example}{fg=white, bg=clean_teal}
+\setbeamercolor{block body example}{bg=clean_teal!25}
 
 \setbeamercolor{alerted text}{fg=darkred}
 
