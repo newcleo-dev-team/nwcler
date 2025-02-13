@@ -8,28 +8,28 @@
 % frame title
 \defbeamertemplate*{frametitle}{nwcler}[1][]{
   \vskip.03\paperheight
-  \begin{beamercolorbox}[wd=\paperwidth]{frametitle} 
-  \begin{tikzpicture}
-  \hspace*{2em}
-  \ifx\insertframesubtitle\@empty%
-     {\node[anchor=west] at (3.2,0.61){
-        \usebeamerfont{frametitle}%
-        % \ifx\insertsubsectionnumber\@empty%
-          % \insertsectionnumber.
-        % \else%
-          % \insertsectionnumber{.}\insertsubsectionnumber
-        % \fi
-        \insertframetitle
-      };}
-  \else%
-     {\node[anchor= west] at (3.2,0.81){
-        \usebeamerfont{frametitle}\insertframetitle
-      };
-      \node[anchor= west] at (3.2,0.31){
-        \usebeamerfont{framesubtitle}\insertframesubtitle
-      };}
-  \fi
-  \end{tikzpicture}
+  \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+    \begin{tikzpicture}
+      \vspace*{0.75em} \hspace*{1em}
+      \ifx\insertframesubtitle\@empty%
+        {\node[anchor=west] at (3.2,0.61){
+            \usebeamerfont{frametitle}%
+            % \ifx\insertsubsectionnumber\@empty%
+            % \insertsectionnumber.
+            % \else%
+            % \insertsectionnumber{.}\insertsubsectionnumber
+            % \fi
+            \insertframetitle
+          };}
+        \else%
+        {\node[anchor=west] at (3.2,0.81){
+            \usebeamerfont{frametitle}\insertframetitle
+          };
+          \node[anchor=west] at (3.2,0.31){
+            \usebeamerfont{framesubtitle}\insertframesubtitle
+          };}
+      \fi
+    \end{tikzpicture}
   \end{beamercolorbox}
 }
 
