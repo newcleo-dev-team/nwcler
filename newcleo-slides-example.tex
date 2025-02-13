@@ -15,8 +15,11 @@
 \usepackage{pifont}
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}
-\newcommand{\pro}[1]{\item[{\color{nwclgreen}\cmark}] #1}
+\newcommand{\pro}[1]{\item[{\color{clean_teal}\cmark}] #1}
 \newcommand{\con}[1]{\item[{\color{darkred}\xmark}] #1}
+
+% listing global configuration
+\lstset{basicstyle=\ttfamily}
 
 \title{Sample Title Here}
 \subtitle{Sample Subtitle Here}
@@ -31,7 +34,7 @@
 }
 % NWCL as acronym of the institute or company for the affiliation used
 \institute[NWCL]{
-  \inst{1} \newcleo\ SrL, Via Giuseppe Galliano 27, 10129 Torino, Italy
+  \inst{1} \newcleo\ SpA, Via Giuseppe Galliano 27, 10129 Torino, Italy
 %  \inst{2} \newcleo\ Ltd, 2 Portman Street, London, England, W1H 6DU
 %  \inst{3} \newcleo\ SA, Tour Silex$^2$, 9 rue des Cuirassiers, 69003 Lyon, France
 }
@@ -64,13 +67,13 @@
 \section{How to install \texttt{nwcler}}
 
 % listings, verbatim, minted, all need the fragile option for frame
-\begin{frame}[fragile]{\insertsection}
+\begin{frame}[fragile]{\secname}
 \begin{block}{Where to find the \TeX\ archive for \textsc{beamer}}
   \small
   The archive \texttt{nwcler} is available under version-control by
   \href{https://git-scm.com/}{\texttt{git}} here:
   \begin{lstlisting}[language=bash]
-    git clone XXX
+    git clone https://github.com/newcleo-dev-team/nwcler.git
   \end{lstlisting}
   Please install the package as in the following,
   \begin{lstlisting}[language=bash]
@@ -95,7 +98,7 @@ package index.}
 
 \section{Descriptive section}
 
-\begin{frame}{Text \& side figure}
+\begin{frame}{Text \& side figure}{Subtitle feature testing}
 
 \begin{columns}
 \begin{column}{0.58\textwidth}
@@ -141,7 +144,7 @@ Use alert blocks in case of warning message.
 %
 \begin{exampleblock}{This is an example of code block}\scriptsize
 \lstset{
-  commentstyle=\color{nwclgreen},    % comment style
+  commentstyle=\color{clean_teal},    % comment style
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
   language=[95]Fortran,                 % the language of the code
