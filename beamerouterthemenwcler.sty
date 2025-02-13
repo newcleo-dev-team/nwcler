@@ -52,7 +52,9 @@
       \raisebox{-.25\height}{\includegraphics[width=\logowd]{\bkglogo}}
       \IfFileExists{\secondlogo}{
         \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
-      }{ \@latex@warning{Missing second logo or wrong path} }
+      }{
+        \@latex@warning{Missing second logo or wrong path}
+      }
       \hspace*{0.25em}
       }
     \end{beamercolorbox}%
@@ -65,7 +67,8 @@
       {date in head/foot}%
       \usebeamerfont{author in head/foot}\hspace*{2em}
       \insertframenumber{} / \insertmainframenumber\hspace*{2ex}
-    \end{beamercolorbox}}
+    \end{beamercolorbox}
+  }
   % \fi
 }
 
@@ -76,7 +79,7 @@
     \hfil  % \newline 
   \end{minipage}
   \mbox{
-    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.5ex]{}
+    \begin{beamercolorbox}[wd=0.73\paperwidth,ht=2.5ex,dp=1.5ex]{}
       {\hspace*{0.25em}
         \raisebox{-.25\height}{\includegraphics[width=\logowd]{
             \thelogo
@@ -86,6 +89,11 @@
           \raisebox{-.25\height}{\includegraphics[width=\secondlogowd]{\secondlogo}}
         }{ \@latex@warning{Missing second logo or wrong path} }
         \hspace*{0.25em}
+      }
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.27\paperwidth,ht=2.5ex,dp=1.5ex,right]{pages in section foot}%
+      {\tiny
+      \hspace*{3ex}\insertframenumber{} / \insertmainframenumber\hspace*{3ex}
       }
     \end{beamercolorbox}
   }
